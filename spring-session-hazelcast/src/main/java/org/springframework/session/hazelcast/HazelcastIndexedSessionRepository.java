@@ -23,6 +23,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 import javax.annotation.PostConstruct;
@@ -152,7 +153,7 @@ public class HazelcastIndexedSessionRepository
 
 	private IMap<String, MapSession> sessions;
 
-	private String sessionListenerId;
+	private UUID sessionListenerId;
 
 	/**
 	 * Create a new {@link HazelcastIndexedSessionRepository} instance.
