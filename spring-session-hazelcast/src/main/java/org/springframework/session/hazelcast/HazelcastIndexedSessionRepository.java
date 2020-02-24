@@ -33,7 +33,7 @@ import com.hazelcast.core.EntryEvent;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.map.IMap;
 import com.hazelcast.map.listener.EntryAddedListener;
-import com.hazelcast.map.listener.EntryEvictedListener;
+import com.hazelcast.map.listener.EntryExpiredListener;
 import com.hazelcast.map.listener.EntryRemovedListener;
 import com.hazelcast.query.Predicates;
 import org.apache.commons.logging.Log;
@@ -113,7 +113,7 @@ import org.springframework.util.ClassUtils;
  */
 public class HazelcastIndexedSessionRepository
 		implements FindByIndexNameSessionRepository<HazelcastIndexedSessionRepository.HazelcastSession>,
-		EntryAddedListener<String, MapSession>, EntryEvictedListener<String, MapSession>,
+		EntryAddedListener<String, MapSession>, EntryExpiredListener<String, MapSession>,
 		EntryRemovedListener<String, MapSession> {
 
 	/**
@@ -322,7 +322,7 @@ public class HazelcastIndexedSessionRepository
 	}
 
 	@Override
-	public void entryEvicted(EntryEvent<String, MapSession> event) {
+	public void entryExpired(EntryEvent<String, MapSession> event) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("Session expired with id: " + event.getOldValue().getId());
 		}
