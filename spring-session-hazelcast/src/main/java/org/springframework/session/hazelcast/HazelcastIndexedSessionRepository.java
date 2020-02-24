@@ -81,15 +81,15 @@ import org.springframework.util.ClassUtils;
  * programmatic Hazelcast Configuration:
  *
  * <pre class="code">
- * MapAttributeConfig attributeConfig = new MapAttributeConfig()
+ * AttributeConfig attributeConfig = new AttributeConfig()
  *         .setName(HazelcastIndexedSessionRepository.PRINCIPAL_NAME_ATTRIBUTE)
- *         .setExtractor(PrincipalNameExtractor.class.getName());
+ *         .setExtractorClassName(PrincipalNameExtractor.class.getName());
  *
  * Config config = new Config();
  *
  * config.getMapConfig(HazelcastIndexedSessionRepository.DEFAULT_SESSION_MAP_NAME)
- *         .addMapAttributeConfig(attributeConfig)
- *         .addMapIndexConfig(new MapIndexConfig(
+ *         .addAttributeConfig(attributeConfig)
+ *         .addIndexConfig(new IndexConfig(
  *                 HazelcastIndexedSessionRepository.PRINCIPAL_NAME_ATTRIBUTE, false));
  *
  * Hazelcast.newHazelcastInstance(config);
