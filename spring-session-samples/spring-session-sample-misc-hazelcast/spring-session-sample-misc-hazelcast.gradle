@@ -4,7 +4,7 @@ dependencies {
 	compile project(':spring-session-core')
 	compile "org.webjars:bootstrap"
 	compile "org.webjars:webjars-taglib"
-	compile "com.hazelcast:hazelcast-client"
+	compile "com.hazelcast:hazelcast-all"
 	compile jstlDependencies
 	compile slf4jDependencies
 

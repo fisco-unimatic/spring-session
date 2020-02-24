@@ -9,11 +9,8 @@ dependencyManagement {
 	}
 
 	dependencies {
-		dependencySet(group: 'com.hazelcast', version: '3.12.5') {
-			entry 'hazelcast'
-			entry 'hazelcast-client'
-		}
-
+		// TODO: revert to hazelcast and hazelcast-client instead of hazelcast-all when hazelcast-client:4.0 is released
+		dependency 'com.hazelcast:hazelcast-all:4.0'
 		dependency 'com.h2database:h2:1.4.199'
 		dependency 'com.ibm.db2:jcc:11.5.0.0'
 		dependency 'com.microsoft.sqlserver:mssql-jdbc:7.4.1.jre8'
